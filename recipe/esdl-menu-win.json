@@ -1,0 +1,11 @@
+{
+  "menu_name": "ESA Earth System Data Lab",
+  "menu_items": [
+    {
+      "name": "ESDL CLI",
+      "system": "%COMSPEC%",
+      "scriptarguments": ["/K", "${PREFIX}\\Scripts\\esdl-cli.bat"],
+      "icon": "${MENU_DIR}/esdl.ico"
+    }
+  ]
+}

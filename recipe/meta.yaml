@@ -1,0 +1,75 @@
+# See https://conda.io/docs/building/meta-yaml.html
+# for more information about this file.
+
+about:
+  summary: "ESA Earth System Data Lab"
+  home: https://github.com/CCI-Tools/esdl
+  license: MIT
+  license_file: LICENSE
+
+package:
+  name: esdl-cli
+  # Not released/deployed yet! Use PEP 440 versioning scheme
+  # ref: https://www.python.org/dev/peps/pep-0440/#developmental-releases
+  # e.g.
+  # 0.7.0.dev1
+  # 1.0.0
+  version: "0.1.0.dev1"
+
+build:
+  number: 0
+  entry_points:
+    - esdl = esdl.cli.main:main
+    - esdl-server = esdl.server.main:main
+
+source:
+  # git_url: https://github.com/CCI-Tools/esdl.git
+  path: ..
+
+requirements:
+  build:
+    - python 3.6*
+    #
+    # dependencies (in alphabetical order)
+    #
+    - tornado >=5.0,<6.0
+    #
+    # build
+    - setuptools
+    - pytest
+    - pytest-cov
+
+  run:
+    - python 3.6*
+    #
+    # dependencies (in alphabetical order)
+    #
+    - tornado >=5.0,<6.0
+
+test:
+  # Python imports
+  imports:
+    - esdl
+
+  commands:
+    # You can put test commands to be run here.  Use this to test that the
+    # entry points work.
+    - esdl --help
+    - esdl-server --help
+
+  # You can also put a file called run_test.py in the recipe that will be run
+  # at test time.
+
+  requires:
+    # Put any additional test requirements here.
+    - pytest
+    - pytest-cov
+
+# The app section is for creating entries in the Anaconda Launcher / Navigator
+app:
+  entry: open ${PREFIX}/Scripts/esdl-cli.bat      # [win]
+  entry: open ${PREFIX}/bin/esdl-cli              # [osx]
+  entry: open ${PREFIX}/bin/esdl-cli              # [linux]
+  icon: esdl.png
+  own_environment: False
+  summary:  "ESA Earth System Data Lab"

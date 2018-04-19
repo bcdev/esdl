@@ -1,0 +1,16 @@
+[Desktop Entry]
+Comment=
+Exec=${PREFIX}/bin/esdl-cli
+TryExec=${PREFIX}/bin/esdl-cli
+Icon=${PREFIX}/share/esdl/esdl.png
+MimeType=
+Name=ESA ESDL CLI
+Path=
+StartupNotify=true
+Terminal=true
+TerminalOptions=
+Type=Application
+X-DBUS-ServiceName=
+X-DBUS-StartupType=
+X-KDE-SubstituteUID=false
+X-KDE-Username=

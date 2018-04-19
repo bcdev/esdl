@@ -1,0 +1,19 @@
+#!/bin/bash
+
+ESDL_BIN="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+ESDL_HOME="$( cd "${ESDL_BIN}/.."  && pwd )"
+
+source "${ESDL_BIN}/activate" "${ESDL_HOME}"
+
+if [[ -z $@ ]]; then
+  reset
+  echo
+  echo Command-Line for ESA Earth System Data Lab. Type "esdl -h" for help.
+  echo
+
+  unset PROMPT_COMMAND
+  export PS1="\[\033[1;34m\](esdl)\[\033[0m\] $ "
+  exec /bin/bash --norc -i
+else
+   $@
+fi
