@@ -20,7 +20,7 @@ if "%*" == "" (
 :INTERACTIVE
 prompt $G$S
 echo.
-@echo ESA CCI Toolbox (CLI) command-line interface. Type "esdl -h" to get help.
+@echo ESA Earth System Data Lab CLI. Type "esdl -h" to get help.
 echo.
 
 cmd /K ""
